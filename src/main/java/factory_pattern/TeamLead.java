@@ -6,14 +6,15 @@ import static factory_pattern.DeveloperLevel.*;
 public class TeamLead implements Developer{
 
     private static TeamLead teamLead;
-    private static String name = "John";
-    private static int age = 28;
+    private String name;
+    private int age;
     private DeveloperLevel level;
 
     private TeamLead(String name,int age){
         try{
             Thread.sleep(1000);
         }catch (InterruptedException e){
+            Thread.currentThread().interrupt();
             e.printStackTrace();
         }
         this.name = name;
@@ -23,7 +24,6 @@ public class TeamLead implements Developer{
 
     public void takePosition() {
         level = TEAM_LEAD;
-        System.out.println("I am a Team Lead");
     }
 
     public String getName() {
@@ -49,16 +49,18 @@ public class TeamLead implements Developer{
     }
     public static TeamLead getTeamLead(){
         if (teamLead == null){
-            teamLead = new TeamLead(TeamLead.name, TeamLead.age);
+            assert false;
+            teamLead = new TeamLead(TeamLead.teamLead.name, TeamLead.teamLead.age);
         }
         return teamLead;
     }
 
     @Override
     public String toString() {
-        return "TeamLead{" +
+        return "{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", level=" + level +
                 '}';
     }
 }

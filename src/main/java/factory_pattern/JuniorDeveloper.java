@@ -33,19 +33,18 @@ public class JuniorDeveloper implements Developer{
 
     public void takePosition() {
         this.level = JUNIOR;
-        System.out.println("I am a Junior.");
     }
-    public int setDesiredSalary(int desiredSalary){
+    public void setDesiredSalary(int desiredSalary){
         this.desiredSalary = desiredSalary;
-        return this.desiredSalary;
     }
 
     @Override
     public String toString() {
-        return "JuniorDeveloper{" +
+        return "{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", desiredSalary=" + desiredSalary +
+                ", level=" + level +
                 '}';
     }
 }

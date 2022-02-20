@@ -33,20 +33,19 @@ public class MiddleDeveloper implements Developer{
 
     public void takePosition() {
         this.level = MIDDLE;
-        System.out.println("I am a Middle.");
     }
 
-    public int setDesiredSalary(int desiredSalary){
+    public void setDesiredSalary(int desiredSalary){
         this.desiredSalary = desiredSalary;
-        return this.desiredSalary;
     }
 
     @Override
     public String toString() {
-        return "MiddleDeveloper{" +
+        return "{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", desiredSalary=" + desiredSalary +
+                ", level=" + level +
                 '}';
     }
 }

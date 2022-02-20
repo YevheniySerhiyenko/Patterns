@@ -33,21 +33,20 @@ public class TraineeDeveloper implements Developer {
 
     public void takePosition() {
         this.level = TRAINEE;
-        System.out.println("I am a Trainee");
     }
 
-    public int setDesiredSalary(int desiredSalary){
+    public void setDesiredSalary(int desiredSalary){
         this.desiredSalary = desiredSalary;
-        return this.desiredSalary;
     }
 
 
     @Override
     public String toString() {
-        return "TraineeDeveloper{" +
+        return "{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", desiredSalary=" + desiredSalary +
+                ", level=" + level +
                 '}';
     }
 }
