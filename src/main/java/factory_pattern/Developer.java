@@ -1,5 +1,7 @@
 package factory_pattern;
 
+import static factory_pattern.DeveloperLevel.*;
+
 public abstract class Developer {
 
     protected static String name = "John";
@@ -25,29 +27,15 @@ public abstract class Developer {
         return salary;
     }
 
-//    public void setSalary(DeveloperLevel level){
-//        for(DeveloperLevel levels : DeveloperLevel.values()){
-//            if (level.equals(levels)) salary = 500;
-//                else if (){
-//                    salary = 1000;
-//                    break;
-//                }
-//                case MIDDLE : {
-//                    salary = 2000;
-//                    break;
-//                }
-//                case SENIOR : {
-//                    salary = 4000;
-//                    break;
-//                }
-//                case TEAM_LEAD : {
-//                    salary = 7000;
-//                    break;
-//                }
-//                default : throw new IllegalArgumentException();
-//            }
-//        }
-//    }
+    public void setSalary(DeveloperLevel level){
+
+            if (level.equals(TRAINEE)) {salary = 500;}
+            else if (level.equals(JUNIOR)) {salary = 1000;}
+            else if (level.equals(MIDDLE)) {salary = 2000;}
+            else if (level.equals(SENIOR)) {salary = 4000;}
+            else if (level.equals(TEAM_LEAD)) {salary = 7000;}
+            else {throw new IllegalArgumentException();}
+    }
 
     @Override
     public String toString() {

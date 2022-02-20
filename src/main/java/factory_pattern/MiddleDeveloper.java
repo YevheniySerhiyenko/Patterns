@@ -4,6 +4,10 @@ public class MiddleDeveloper extends Developer {
 
     private final DeveloperLevel level = DeveloperLevel.MIDDLE;
 
+    public MiddleDeveloper(){
+        super.setSalary(level);
+    }
+
     @Override
     public String toString() {
         return "{" +

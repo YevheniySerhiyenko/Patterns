@@ -6,7 +6,6 @@ public class SeniorDeveloper extends Developer {
 
     public SeniorDeveloper(){
         super.setSalary(level);
-
     }
 
     @Override
