@@ -4,9 +4,9 @@ public class Test {
     public static void main(String[] args) {
         DeveloperFactory developerFactory = createFactory(DeveloperLevel.JUNIOR);
         Developer developer = developerFactory.getDeveloper();
-        developer.setAge(35);
-        developer.setName("Andrew");
-        System.out.println(developer.toString());
+        developer.setAge(1);
+        developer.setName("john");
+        System.out.println(developer);
 
 
     }
