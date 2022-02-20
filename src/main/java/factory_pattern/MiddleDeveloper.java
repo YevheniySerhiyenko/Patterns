@@ -5,6 +5,12 @@ public class MiddleDeveloper implements Developer{
     private int age;
     private int desiredSalary;
 
+    public MiddleDeveloper(){
+        setName("Bob");
+        setAge(27);
+        setDesiredSalary(2000);
+    }
+
 
     public String getName() {
         return name;
@@ -27,9 +33,14 @@ public class MiddleDeveloper implements Developer{
         System.out.println("I am a Middle.");
     }
 
+    public int setDesiredSalary(int desiredSalary){
+        this.desiredSalary = desiredSalary;
+        return this.desiredSalary;
+    }
+
     @Override
     public String toString() {
-        return "factory_pattern.MiddleDeveloper{" +
+        return "MiddleDeveloper{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", desiredSalary=" + desiredSalary +

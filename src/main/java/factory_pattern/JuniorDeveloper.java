@@ -5,6 +5,13 @@ public class JuniorDeveloper implements Developer{
     private int age;
     private int desiredSalary;
 
+
+    public JuniorDeveloper(){
+        setName("John");
+        setAge(25);
+        setDesiredSalary(1000);
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -25,10 +32,14 @@ public class JuniorDeveloper implements Developer{
         level = DeveloperLevel.JUNIOR;
         System.out.println("I am a Junior.");
     }
+    public int setDesiredSalary(int desiredSalary){
+        this.desiredSalary = desiredSalary;
+        return this.desiredSalary;
+    }
 
     @Override
     public String toString() {
-        return "factory_pattern.JuniorDeveloper{" +
+        return "JuniorDeveloper{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", desiredSalary=" + desiredSalary +

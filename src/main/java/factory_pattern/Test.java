@@ -2,8 +2,11 @@ package factory_pattern;
 
 public class Test {
     public static void main(String[] args) {
-        DeveloperFactory developerFactory = createFactory(DeveloperLevel.SENIOR);
+        DeveloperFactory developerFactory = createFactory(DeveloperLevel.JUNIOR);
         Developer developer = developerFactory.getDeveloper();
+        developer.setAge(35);
+        developer.setName("olya");
+        System.out.println(developer.toString());
 
 
     }

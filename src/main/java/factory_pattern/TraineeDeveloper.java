@@ -5,6 +5,12 @@ public class TraineeDeveloper implements Developer {
     private int age;
     private int desiredSalary;
 
+    public TraineeDeveloper(){
+        setName("Jack");
+        setAge(23);
+        setDesiredSalary(500);
+    }
+
 
     public String getName() {
         return name;
@@ -27,9 +33,15 @@ public class TraineeDeveloper implements Developer {
         System.out.println("I am a Trainee");
     }
 
+    public int setDesiredSalary(int desiredSalary){
+        this.desiredSalary = desiredSalary;
+        return this.desiredSalary;
+    }
+
+
     @Override
     public String toString() {
-        return "factory_pattern.TraineeDeveloper{" +
+        return "TraineeDeveloper{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", desiredSalary=" + desiredSalary +

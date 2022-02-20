@@ -5,6 +5,12 @@ public class SeniorDeveloper implements Developer{
     private int age;
     private int desiredSalary;
 
+    public SeniorDeveloper(){
+        setName("Robert");
+        setAge(29);
+        setDesiredSalary(4000);
+    }
+
 
     public String getName() {
         return name;
@@ -27,9 +33,14 @@ public class SeniorDeveloper implements Developer{
         System.out.println("I am a Senior.");
     }
 
+    public int setDesiredSalary(int desiredSalary){
+        this.desiredSalary = desiredSalary;
+        return this.desiredSalary;
+    }
+
     @Override
     public String toString() {
-        return "factory_pattern.SeniorDeveloper{" +
+        return "SeniorDeveloper{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", desiredSalary=" + desiredSalary +
