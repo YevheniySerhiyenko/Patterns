@@ -14,12 +14,23 @@ public class Test {
     static DeveloperFactory createFactory(DeveloperLevel developerLevel) {
         DeveloperFactory factory = null;
         switch (developerLevel) {
-            case TRAINEE -> factory = new TraineeDeveloperFactory();
-            case JUNIOR -> factory = new JuniorDeveloperFactory();
-            case MIDDLE -> factory = new MiddleDeveloperFactory();
-            case SENIOR -> factory = new SeniorDeveloperFactory();
-            case TEAM_LEAD ->  factory = new TeamLeadFactory();
-            default -> throw new IllegalArgumentException(developerLevel + " is unknown");
+            case TRAINEE: {
+                factory = new TraineeDeveloperFactory();
+                break; }
+            case JUNIOR: {
+                factory = new JuniorDeveloperFactory();
+                break; }
+            case MIDDLE: {
+                factory = new MiddleDeveloperFactory();
+                break; }
+            case SENIOR: {
+                factory = new SeniorDeveloperFactory();
+                break; }
+            case TEAM_LEAD: {
+                factory = new TeamLeadFactory();
+                break; }
+            default:
+                throw new IllegalArgumentException(developerLevel + " is unknown");
         }
         return factory;
     }
