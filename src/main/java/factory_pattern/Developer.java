@@ -1,7 +1,7 @@
 package factory_pattern;
 
 public interface Developer {
-    void takePosition(DeveloperLevel level);
+    void takePosition();
     String getName();
     void setName(String name);
     int getAge();

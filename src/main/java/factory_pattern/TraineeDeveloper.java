@@ -1,9 +1,12 @@
 package factory_pattern;
 
+import static factory_pattern.DeveloperLevel.*;
+
 public class TraineeDeveloper implements Developer {
     private String name;
     private int age;
     private int desiredSalary;
+    private DeveloperLevel level;
 
     public TraineeDeveloper(){
         setName("Jack");
@@ -28,8 +31,8 @@ public class TraineeDeveloper implements Developer {
         return age;
     }
 
-    public void takePosition(DeveloperLevel level) {
-        level = DeveloperLevel.TRAINEE;
+    public void takePosition() {
+        this.level = TRAINEE;
         System.out.println("I am a Trainee");
     }
 

@@ -1,9 +1,12 @@
 package factory_pattern;
 
+import static factory_pattern.DeveloperLevel.*;
+
 public class MiddleDeveloper implements Developer{
     private String name;
     private int age;
     private int desiredSalary;
+    private DeveloperLevel level;
 
     public MiddleDeveloper(){
         setName("Bob");
@@ -28,8 +31,8 @@ public class MiddleDeveloper implements Developer{
         return age;
     }
 
-    public void takePosition(DeveloperLevel level) {
-        level = DeveloperLevel.MIDDLE;
+    public void takePosition() {
+        this.level = MIDDLE;
         System.out.println("I am a Middle.");
     }
 
