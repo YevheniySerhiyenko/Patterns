@@ -1,56 +1,41 @@
 package factory_pattern;
 
-import static factory_pattern.DeveloperLevel.*;
-
 //singleton
-public class TeamLead implements Developer{
+public class TeamLead extends Developer {
 
     private static TeamLead teamLead;
-    private String name;
-    private int age;
-    private DeveloperLevel level;
+    private DeveloperLevel level = DeveloperLevel.TEAM_LEAD;
 
-    private TeamLead(String name,int age){
-        try{
+    private TeamLead(String name, int age) {
+        try {
             Thread.sleep(1000);
-        }catch (InterruptedException e){
+        } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             e.printStackTrace();
         }
-        this.name = name;
-        this.age = age;
+        Developer.name = name;
+        Developer.age = age;
 
-    }
-
-    public void takePosition() {
-        level = TEAM_LEAD;
-    }
-
-    public String getName() {
-        return name;
     }
 
     @Override
     public void setName(String name) {
-         if(name.equalsIgnoreCase("john")){
-             this.name = name;
-         }else System.out.println("Your name wrong. TeamLeads name is John.");
+        if (name.equalsIgnoreCase("john")) {
+            Developer.name = name;
+        } else System.out.println("Your name wrong. TeamLeads name is John.");
 
     }
 
-    public int getAge() {
-        return age;
-    }
-
+    @Override
     public void setAge(int age) {
-        if(age == 28){
-            this.age = age;
-        }else System.out.println("Your age wrong. Team Lead 28 years old.");
+        if (age == 28) {
+            Developer.age = age;
+        } else System.out.println("Your age wrong. Team Lead 28 years old.");
     }
-    public static TeamLead getTeamLead(){
-        if (teamLead == null){
-            assert false;
-            teamLead = new TeamLead(TeamLead.teamLead.name, TeamLead.teamLead.age);
+
+    public static TeamLead getTeamLead() {
+        if (teamLead == null) {
+            teamLead = new TeamLead(name, age);
         }
         return teamLead;
     }
@@ -58,8 +43,8 @@ public class TeamLead implements Developer{
     @Override
     public String toString() {
         return "{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
+                "name='" + super.getName() + '\'' +
+                ", age=" + super.getAge() +
                 ", level=" + level +
                 '}';
     }
