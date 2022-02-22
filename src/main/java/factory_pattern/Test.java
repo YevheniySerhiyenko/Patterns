@@ -1,4 +1,5 @@
 package factory_pattern;
+import java.util.logging.Logger;
 
 import static factory_pattern.DeveloperLevel.*;
 
@@ -8,7 +9,7 @@ public class Test {
         Developer developer = developerFactory.getDeveloper();
         developer.setAge(35);
         developer.setName("Kohn");
-        System.out.println(developer);
+        Logger.getLogger(String.valueOf(developer));
 
 
     }
