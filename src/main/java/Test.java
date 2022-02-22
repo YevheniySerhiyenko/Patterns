@@ -7,5 +7,11 @@ public class Test {
         Developer middle = school.getDeveloper(DeveloperLevel.MIDDLE);
         Developer senior = school.getDeveloper(DeveloperLevel.SENIOR);
         Developer teamLead = school.getDeveloper(DeveloperLevel.TEAM_LEAD);
+
+        trainee.takePosition();
+        junior.takePosition();
+        middle.takePosition();
+        senior.takePosition();
+        teamLead.takePosition();
     }
 }
