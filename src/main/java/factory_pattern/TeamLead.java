@@ -3,8 +3,8 @@ package factory_pattern;
 //singleton
 public class TeamLead extends Developer {
 
-    private static TeamLead teamLead;
-    private DeveloperLevel level = DeveloperLevel.TEAM_LEAD;
+    private static volatile TeamLead teamLead;
+    private static final DeveloperLevel level = DeveloperLevel.TEAM_LEAD;
 
     private TeamLead(String name, int age) {
         try {
@@ -35,9 +35,13 @@ public class TeamLead extends Developer {
 
     public static TeamLead getTeamLead() {
         if (teamLead == null) {
-            teamLead = new TeamLead(name, age);
+            synchronized (TeamLead.class) {
+                if (teamLead == null) {
+                    teamLead = new TeamLead(name, age);
+                }
+            }
         }
-        return teamLead;
+            return teamLead;
     }
 
     @Override

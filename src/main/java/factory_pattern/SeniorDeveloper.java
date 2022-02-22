@@ -2,7 +2,7 @@ package factory_pattern;
 
 public class SeniorDeveloper extends Developer {
 
-    private final DeveloperLevel level = DeveloperLevel.SENIOR;
+    private static final DeveloperLevel level = DeveloperLevel.SENIOR;
 
     public SeniorDeveloper(){
         super.setSalary(level);
