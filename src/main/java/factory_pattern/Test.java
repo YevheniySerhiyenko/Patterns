@@ -1,15 +1,15 @@
 package factory_pattern;
-import java.util.logging.Logger;
+
 
 import static factory_pattern.DeveloperLevel.*;
 
 public class Test {
     public static void main(String[] args) {
-        DeveloperFactory developerFactory = createFactory(TRAINEE);
+        DeveloperFactory developerFactory = createFactory(TEAM_LEAD);
         Developer developer = developerFactory.getDeveloper();
         developer.setAge(35);
         developer.setName("Kohn");
-        Logger.getLogger(String.valueOf(developer));
+        System.out.println(developer);
 
 
     }

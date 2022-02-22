@@ -1,6 +1,5 @@
 package factory_pattern;
 
-import java.util.logging.Logger;
 
 //singleton
 public class TeamLead extends Developer {
@@ -22,17 +21,16 @@ public class TeamLead extends Developer {
 
     @Override
     public void setName(String name) {
-        if (name.equalsIgnoreCase("john")) {
-            Developer.name = name;
-        } else Logger.getLogger("Your name wrong. TeamLeads name is John.");
-
+        if (!name.equalsIgnoreCase("john")){
+         System.out.println(("Your name wrong. TeamLeads name is John."));
+        }
     }
 
     @Override
     public void setAge(int age) {
-        if (age == 28) {
-            Developer.age = age;
-        } else Logger.getLogger("Your age wrong. Team Lead 28 years old.");
+        if (age != 28) {
+            System.out.println(("Your age wrong. Team Lead 28 years old."));
+        }
     }
 
     public static TeamLead getTeamLead() {
