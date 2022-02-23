@@ -1,6 +1,6 @@
 package factory_pattern;
 
-public class JuniorDeveloperFactory extends DeveloperFactory {
+public class JuniorDeveloperFactory implements DeveloperFactory {
     @Override
     public Developer getDeveloper() {
         return new JuniorDeveloper(DeveloperLevel.JUNIOR);

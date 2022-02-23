@@ -2,7 +2,7 @@ package factory_pattern;
 
 import java.util.Scanner;
 
-public abstract class DeveloperFactory {
+public interface DeveloperFactory {
 
     abstract Developer getDeveloper();
 

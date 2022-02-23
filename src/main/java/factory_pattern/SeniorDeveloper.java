@@ -1,24 +1,13 @@
 package factory_pattern;
 
-public class SeniorDeveloper extends Developer {
+public class SeniorDeveloper extends SetterAgeAndNameForDevelopers {
     private String name;
     private int age;
+
     public SeniorDeveloper(DeveloperLevel level){
         super.setSalary(level);
         setName();
         setAge();
-    }
-
-    @Override
-    public Developer setName() {
-        name = super.getName();
-        return super.setName();
-    }
-
-    @Override
-    public Developer setAge() {
-        age = super.getAge();
-        return super.setAge();
     }
 
     @Override
