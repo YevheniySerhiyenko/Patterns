@@ -1,20 +1,33 @@
 package factory_pattern;
 
 public class SeniorDeveloper extends Developer {
-
-    private static final DeveloperLevel level = DeveloperLevel.SENIOR;
-
-    public SeniorDeveloper(){
+    private String name;
+    private int age;
+    public SeniorDeveloper(DeveloperLevel level){
         super.setSalary(level);
+        setName();
+        setAge();
+    }
+
+    @Override
+    public Developer setName() {
+        name = super.getName();
+        return super.setName();
+    }
+
+    @Override
+    public Developer setAge() {
+        age = super.getAge();
+        return super.setAge();
     }
 
     @Override
     public String toString() {
         return "{" +
-                "name='" + super.getName() + '\'' +
-                ", age=" + super.getAge() +
-                ", applying for a salary=" + super.getSalary() +
-                ", level=" + level +
+                "name='" + this.name + '\'' +
+                ", age=" + this.age +
+                ", salary=" + super.getSalary() +
+                ", level=" + DeveloperLevel.SENIOR +
                 '}';
     }
 }

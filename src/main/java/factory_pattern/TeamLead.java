@@ -3,52 +3,48 @@ package factory_pattern;
 
 //singleton
 public class TeamLead extends Developer {
+    private static final String NAME = "John";
+    private static final int AGE = 28;
 
     private static volatile TeamLead teamLead;
     private static final DeveloperLevel level = DeveloperLevel.TEAM_LEAD;
 
-    private TeamLead(String name, int age) {
+    private TeamLead() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
             e.printStackTrace();
         }
-        Developer.name = name;
-        Developer.age = age;
 
-    }
-
-    @Override
-    public void setName(String name) {
-        if (!name.equalsIgnoreCase("john")){
-         System.out.println(("Your name wrong. TeamLeads name is John."));
-        }
-    }
-
-    @Override
-    public void setAge(int age) {
-        if (age != 28) {
-            System.out.println(("Your age wrong. Team Lead 28 years old."));
-        }
     }
 
     public static TeamLead getTeamLead() {
         if (teamLead == null) {
             synchronized (TeamLead.class) {
                 if (teamLead == null) {
-                    teamLead = new TeamLead(name, age);
+                    teamLead = new TeamLead();
                 }
             }
         }
-            return teamLead;
+        return teamLead;
     }
 
     @Override
+    public Developer setName() {
+        return TeamLead.getTeamLead();
+    }
+
+    @Override
+    public Developer setAge() {
+        return TeamLead.getTeamLead();
+    }
+
     public String toString() {
         return "{" +
-                "name='" + super.getName() + '\'' +
-                ", age=" + super.getAge() +
+                "name='" + NAME + '\'' +
+                ", age=" + AGE +
+                ", salary=" + super.getSalary() +
                 ", level=" + level +
                 '}';
     }

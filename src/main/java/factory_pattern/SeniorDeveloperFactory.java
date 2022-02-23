@@ -1,8 +1,8 @@
 package factory_pattern;
 
-public class SeniorDeveloperFactory implements DeveloperFactory{
+public class SeniorDeveloperFactory extends DeveloperFactory{
     @Override
     public Developer getDeveloper() {
-        return new SeniorDeveloper();
+        return new SeniorDeveloper(DeveloperLevel.SENIOR);
     }
 }
