@@ -1,10 +1,7 @@
 package factory_pattern;
 
 public class SeniorDeveloper extends SetterAgeAndNameForDevelopers {
-    private String name;
-    private int age;
-
-    public SeniorDeveloper(DeveloperLevel level){
+    public SeniorDeveloper(DeveloperLevel level) {
         super.setSalary(level);
         setName();
         setAge();
@@ -13,8 +10,8 @@ public class SeniorDeveloper extends SetterAgeAndNameForDevelopers {
     @Override
     public String toString() {
         return "{" +
-                "name='" + this.name + '\'' +
-                ", age=" + this.age +
+                "name='" + super.getName() + '\'' +
+                ", age=" + super.getAge() +
                 ", salary=" + super.getSalary() +
                 ", level=" + DeveloperLevel.SENIOR +
                 '}';

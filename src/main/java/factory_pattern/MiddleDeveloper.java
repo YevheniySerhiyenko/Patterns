@@ -1,9 +1,6 @@
 package factory_pattern;
 
 public class MiddleDeveloper extends SetterAgeAndNameForDevelopers {
-    private String name;
-    private int age;
-
     public MiddleDeveloper(DeveloperLevel level) {
         super.setSalary(level);
         setName();
@@ -13,8 +10,8 @@ public class MiddleDeveloper extends SetterAgeAndNameForDevelopers {
     @Override
     public String toString() {
         return "{" +
-                "name='" + this.name + '\'' +
-                ", age=" + this.age +
+                "name='" + super.getName() + '\'' +
+                ", age=" + super.getAge() +
                 ", salary=" + super.getSalary() +
                 ", level=" + DeveloperLevel.MIDDLE +
                 '}';

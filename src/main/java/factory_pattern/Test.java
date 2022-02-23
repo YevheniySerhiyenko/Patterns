@@ -5,5 +5,9 @@ public class Test {
 //        write to console developer position, name and age
        Developer developer = DeveloperFactory.createFactory().getDeveloper().setName().setAge();
         System.out.println(developer);
+        Developer developer1 = DeveloperFactory.createFactory().getDeveloper().setName().setAge();
+        System.out.println(developer1);
+        Developer developer2 = DeveloperFactory.createFactory().getDeveloper().setName().setAge();
+        System.out.println(developer2);
     }
 }

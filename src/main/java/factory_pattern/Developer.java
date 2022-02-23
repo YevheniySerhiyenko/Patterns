@@ -24,9 +24,9 @@ public abstract class Developer {
     public Developer setAge() {
         if (ageConsole > 0 && ageConsole < 100) {
             age = ageConsole;
-        }else {
+        } else {
             System.out.println("Your age is wrong! One more!");
-             age = ageConsole = scanner.nextInt();
+            age = ageConsole = scanner.nextInt();
         }
         return this;
     }
@@ -43,7 +43,7 @@ public abstract class Developer {
         return salary;
     }
 
-//    метод для определения зарплаты согласно уровню разработчика
+    //    метод для определения зарплаты согласно уровню разработчика
     public void setSalary(DeveloperLevel level) {
 
         if (level.equals(TRAINEE)) {
